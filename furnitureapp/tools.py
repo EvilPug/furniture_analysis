@@ -17,7 +17,7 @@ def plot_category(category_name: str) -> list:
             df,
             x='orig_price',
             color="status",
-            title='Распределение цены без скидки для разных статусов мебели',
+            title=f'{category_name}: распределение цены',
             labels={"orig_price": "Цена без скидки",
                     "status": "Статус"},
             category_orders={"status": ["в пути", "под заказ", "доступно"]}
@@ -36,7 +36,7 @@ def plot_category(category_name: str) -> list:
 
         fig = px.bar(
             top_10,
-            title='ТОП-10 артикулов по средней цене без скидки',
+            title=f'{category_name}: ТОП-10 артикулов по средней цене',
             labels={"ven_code": "Артикул",
                     "value": "Средняя цена без скидки",
                     "variable": "Переменные"}
@@ -54,7 +54,7 @@ def plot_category(category_name: str) -> list:
             df,
             values=df.value_counts().values,
             names='status',
-            title='Количество уникальных ID по статусам мебели',
+            title=f'{category_name}: количество уникальных ID по статусам',
             category_orders={"status": ["в пути", "под заказ", "доступно"]}
         )
 
@@ -63,6 +63,8 @@ def plot_category(category_name: str) -> list:
             'xanchor': 'center',
             'x': 0.5
         }, legend_traceorder="reversed")
+
+        fig.update_traces(hoverinfo='label+percent', textinfo='value+percent')
 
         charts.append(fig.to_html())
 

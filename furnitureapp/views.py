@@ -44,14 +44,16 @@ def scrap_furniture(request):
                        orig_price=furniture['orig_price'],
                        disc_price=furniture['disc_price'])
                     s.save()
-            message = f'Успешно загружена категория {category_name}'
-            context = {'loaded': loaded, 'message': message}
+
+            charts = plot_category(category_name)
+            message = f'Успешно загружена категория «{category_name}»'
+            context = {'loaded': loaded, 'message': message, 'charts': charts}
 
             return render(request, 'index.html', context)
         else:
 
             charts = plot_category(category_name)
-            message = f'Категория {category_name} уже есть в базе данных. \
+            message = f'Категория «{category_name}» уже есть в базе данных. \
                         Рисуем!'
             context = {'loaded': loaded, 'message': message, 'charts': charts}
 
