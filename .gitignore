@@ -1,0 +1,9 @@
+__pycache__/*
+**/migrations/*
+.env.dev
+env/
+data/
+
+.DS_Store
+*.ps1
+*.pyc

@@ -1,0 +1,13 @@
+Django>=4.0.6
+numpy>=1.23.1
+python-dateutil>=2.8.2
+pytz>=2022.1
+matplotlib>=3.5.2
+html5lib>=1.1
+beautifulsoup4>=4.11.1
+pandas>=1.4.3
+plotly>=5.9.0
+dash>=2.5.0
+requests>=2.27.1
+psycopg2-binary>=2.8
+transliterate>=1.10.2

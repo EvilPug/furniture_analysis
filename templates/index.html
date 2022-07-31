@@ -1,0 +1,41 @@
+{% load static %}
+{{ message }}
+
+<style>
+  .mom {
+      width: 800px; /* Try setting this to 400px or something */
+      display: table;
+      border: 1px solid #444444;
+  }
+  .child {
+      display: table-cell;
+  }
+  /*
+  .child:first-child .childinner {
+      margin-left: 0;
+  }
+  */
+</style>
+
+<form action="/scrap_furniture/" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+ <div class="d-flex justify-content-center">
+	<label for="scrap_furniture">Введите код категории (напр. 0000057 - это прямые диваны)</label>
+ </div>
+ {% csrf_token %}
+ <input class="form-control" id="category" name="category" type="text" value=""></input>
+ <div class="d-flex justify-content-center">
+	<button class="btn btn-default" type="submit" value="submit">Отправить</button>
+ </div>
+</form>
+
+Загруженные категории:
+<br>
+{% for row in loaded %}
+{{row}}
+{% endfor %}
+
+
+
+{% for chart in charts %}
+<div class="mom">{{ chart|safe }}</div>
+{% endfor %}
