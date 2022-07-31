@@ -1,6 +1,5 @@
-
 from django.shortcuts import render
-from parser.scraputils import get_whole_category, convert_category_name
+from parserapp.scraputils import get_whole_category, convert_category_name
 
 from furnitureapp.models import FurnitureModel
 from furnitureapp.tools import plot_category

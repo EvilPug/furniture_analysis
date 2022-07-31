@@ -2,7 +2,7 @@ import time
 import requests
 from bs4 import BeautifulSoup
 
-import parser.config as config
+import parserapp.config as config
 
 
 def convert_category_name(category: str) -> str:
