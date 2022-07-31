@@ -4,7 +4,13 @@
 #### Как развернуть проект?
 
 **С помощью Docker**
-    
+
+- Скачать и установить Docker Desktop: https://www.docker.com/products/docker-desktop/
+
+- Запустить Docker Desktop
+
+Выполнить команды в консоли операционной системы (напр. PowerShell - для Windows):
+
     docker-compose build
     docker-compose up -d
     
